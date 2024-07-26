@@ -1,0 +1,24 @@
+2024-07-25 13:53:45,403 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-07-25 13:53:45,403 [33mPress CTRL+C to quit[0m
+2024-07-25 13:53:45,403  * Restarting with stat
+2024-07-25 13:53:45,533  * Debugger is active!
+2024-07-25 13:53:45,538  * Debugger PIN: 658-643-865
+2024-07-25 13:54:05,150 Received POST request with msg_signature=002293e98cafd069467c1120742f124b6a40ae9f, timestamp=1721865759
+, nonce=370423
+, data=b'<xml>\n    <ToUserName>CORPID</ToUserName>\n    <ServiceId>fw123465</ServiceId>\n    <AgentType>chat</AgentType>\n    <Encrypt><![CDATA[ENCRYPT_DATA]]></Encrypt>\n</xml>\n'
+2024-07-25 13:54:05,153 127.0.0.1 - - [25/Jul/2024 13:54:05] "POST /callback?msg_signature=002293e98cafd069467c1120742f124b6a40ae9f&timestamp=1721865759%0A&nonce=370423%0A HTTP/1.1" 200 -
+2024-07-26 09:32:02,691 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-07-26 09:32:02,691 [33mPress CTRL+C to quit[0m
+2024-07-26 09:32:02,692  * Restarting with stat
+2024-07-26 09:32:02,811  * Debugger is active!
+2024-07-26 09:32:02,817  * Debugger PIN: 658-643-865
+2024-07-26 09:32:44,999 127.0.0.1 - - [26/Jul/2024 09:32:44] "[33mGET / HTTP/1.1[0m" 404 -
+2024-07-26 09:32:49,340 127.0.0.1 - - [26/Jul/2024 09:32:49] "[33mGET / HTTP/1.1[0m" 404 -
+2024-07-26 09:32:53,867 127.0.0.1 - - [26/Jul/2024 09:32:53] "GET /hi HTTP/1.1" 200 -
+2024-07-26 09:33:11,371  * Detected change in '/Users/nathanan/PycharmProjects/客服号回调API/app.py', reloading
+2024-07-26 09:33:11,392  * Restarting with stat
+2024-07-26 09:33:11,992  * Debugger is active!
+2024-07-26 09:33:12,004  * Debugger PIN: 658-643-865
+2024-07-26 09:33:13,816 127.0.0.1 - - [26/Jul/2024 09:33:13] "GET / HTTP/1.1" 200 -
