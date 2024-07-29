@@ -25,7 +25,7 @@ def hello():
 
 @app.route('/')
 def welcome():
-    return 'This is Tencent Overseas Midserver for Service Now and WeCom. Please contact @nathanan for more information.'
+    return 'This is the Tencent Overseas Midserver for communication from WeCom to Servicenow. Please contact @nathanan for more information.'
 
 @app.route('/callback', methods=['POST'])
 def handle_message():
@@ -41,17 +41,17 @@ def handle_message():
     # Decrypt message
     ret, message = wx_crypt.DecryptMsg(data, msg_signature, timestamp, nonce)
 
-    # if ret != 0:
-    #     logging.error("Failed to decrypt message: %s", ret)
-    #     return jsonify({'error': 'Failed to decrypt message', 'code': ret}), 400
-    #
-    # decrypted_message = message.decode('utf-8')  # Decode the decrypted message
-    # logging.info("Decrypted message: %s", decrypted_message)
-    # print("Decrypted message:", decrypted_message)
-    #
-    # # Return decrypted message as response for verification (test)
-    # return jsonify({'decrypted_message': decrypted_message}), 200
+    if ret != 0:
+        logging.error("Failed to decrypt message: %s", ret)
+        return f'error: {ret}', 400
+    
+    decrypted_message = message.decode('utf-8')  # Decode the decrypted message
+    logging.info("Decrypted message: %s", decrypted_message)
+    print("Decrypted message:", decrypted_message)
+    
+    # Return decrypted message as response for verification (test)
+    return f'decrypted_message: {decrypted_message}', 200
     return '', 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=80, debug=True)
