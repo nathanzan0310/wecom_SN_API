@@ -12,13 +12,13 @@ load_dotenv(dotenv_path=env_path)
 
 token = os.environ.get('TOKEN')
 aes_key = os.environ.get('AES_KEY')
-corp_id = os.environ.get('CORP_ID')
+service_id = os.environ.get('SERVICE_ID')
 
 app = Flask(__name__)
 
 logging.basicConfig(filename='callback.log', level=logging.INFO, format='%(asctime)s %(message)s')
 
-wx_crypt = WXBizMsgCrypt(token, aes_key, corp_id)
+wx_crypt = WXBizMsgCrypt(token, aes_key, service_id)
 
 @app.route('/hi')
 def hello():
@@ -70,7 +70,7 @@ def handle_message():
         # print("Decrypted message:", decrypted_message)
         
         # return f'decrypted_message: {decrypted_message}', 200
-        return '', 200
+        return message, 200
     return 'what you doing', 405
 
 if __name__ == '__main__':
